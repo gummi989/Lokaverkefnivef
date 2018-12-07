@@ -1,4 +1,4 @@
-# þurfum að setja pymysql upp í pyCharm (sama rútína og bottle-beaker)
+
 import pymysql
 from bottle import *
 import os
@@ -11,11 +11,11 @@ def index():
 def bill():
     nr = request.forms.get('numer')
 
-    # tengir okkur við þjón og ákveðinn grunn.
+    
     conn = pymysql.connect(host='tsuts.tskoli.is', port=3306, user='1309992639', passwd='mypassword', db='1309992639_bilar')
     cur = conn.cursor()
 
-    # lesa alla úr töflunni bilar, athuga hvort bíll með tiltekið skráningarnúmer er til í db
+  
     cur.execute("SELECT * FROM bilar where skraningarnumer=%s",(nr))
     bill = cur.fetchone()
 
@@ -23,10 +23,10 @@ def bill():
     #cur.close()
     conn.close()
 
-    #bílnúmer ekki til
+    
     if bill is None:
         return template("notbill.tpl",nr=nr)
-    #bílnumer til
+    
     else:
         return template('bill.tpl',bill=bill)
 
@@ -47,7 +47,7 @@ def doinn():
     cur.close()
     conn.close()
 
-    # er u og p til í  db?
+    
     if result[0] == 1:
         return template('admin.tpl',u=u)
     else:
@@ -60,9 +60,9 @@ def breyta():
     conn = pymysql.connect(host='tsuts.tskoli.is', port=3306, user='1309992639', passwd='mypassword', db='1309992639_bilar')
     cur = conn.cursor()
 
-    #sækjum í db upplýsingar um bíl með skraningarnumerið nr
+    
     cur.execute("SELECT * FROM bilar where skraningarnumer=%s",(nr))
-    bill = cur.fetchone()#fáu info um nákvæmlega 1 bíl í tuple
+    bill = cur.fetchone()
     cur.close()
     conn.close()
 
@@ -88,7 +88,7 @@ def dobreyta():
 
     #breytum
     if takki == 'Breyta':
-        conn = pymysql.connect(host='tsuts.tskoli.is', port=3306, user='1309992639', passwd='mypassword', db='1309992639_bilar')
+        conn = pymysql.connect(host='tsuts.tskoli.is', port=3306, user='2704982729', passwd='mypassword', db='2704982729_bilar')
         cur = conn.cursor()
         cur.execute("Update bilar set skraningarnumer='{}', tegund='{}', verksmidjunumer='{}',skraningardagur='{}',co2='{:d}',þyngd='{:d}',skodun='{}',stada='{}' where skraningarnumer='{}'".format(nr, t, v, sd, u, ti, s, st, nr))
         conn.commit()
@@ -97,7 +97,7 @@ def dobreyta():
         redirect('/')
     #eyðum
     else:
-        conn = pymysql.connect(host='tsuts.tskoli.is', port=3306, user='1309992639', passwd='mypassword', db='1309992639_bilar')
+        conn = pymysql.connect(host='tsuts.tskoli.is', port=3306, user='2704982729', passwd='mypassword', db='2704982729_bilar')
         cur = conn.cursor()
         cur.execute("Delete from bilar where skraningarnumer = %s",(nr))
         conn.commit()
@@ -123,7 +123,7 @@ def nyrbill():
     u = int(u)
     ti = int(ti)
 
-    conn = pymysql.connect(host='tsuts.tskoli.is', port=3306, user='1309992639', passwd='mypassword', db='1309992639_bilar')
+    conn = pymysql.connect(host='tsuts.tskoli.is', port=3306, user='2704982729', passwd='mypassword', db='2704982729_bilar')
     cur = conn.cursor()
     cur.execute("Insert into bilar values('{}','{}','{}','{}','{:d}','{:d}','{}','{}')".format(nr, t, v, sd, u, ti, s, st))
     conn.commit()
