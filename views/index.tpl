@@ -5,7 +5,7 @@
     <title>Ökutækjaskrá</title>
 	<style type="text/css">
 		body {
-			background-color: rgb(50,49,51);
+			background-color: rgb(193, 155, 236);
 			margin: 3em;
 		}
 		h3 {
