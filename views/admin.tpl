@@ -25,7 +25,7 @@
   </head>
   <body>
         % import pymysql
-        % conn = pymysql.connect(host='tsuts.tskoli.is', port=3306, user='1309992639', passwd='mypassword', db='1309992639_bilar')
+        % conn = pymysql.connect(host='tsuts.tskoli.is', port=3306, user='2704982729', passwd='mypassword', db='2704982729_bilar')
         % cur = conn.cursor()
         % cur.execute("SELECT * FROM bilar")
 
