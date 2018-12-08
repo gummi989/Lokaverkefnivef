@@ -12,7 +12,7 @@ def bill():
     nr = request.forms.get('numer')
 
     
-    conn = pymysql.connect(host='tsuts.tskoli.is', port=3306, user='1309992639', passwd='mypassword', db='1309992639_bilar')
+    conn = pymysql.connect(host='tsuts.tskoli.is', port=3306, user='2704982729', passwd='mypassword', db='2704982729_bilar')
     cur = conn.cursor()
 
   
@@ -39,7 +39,7 @@ def doinn():
     u = request.forms.get('user')
     p = request.forms.get('pass')
 
-    conn = pymysql.connect(host='tsuts.tskoli.is', port=3306, user='1309992639', passwd='mypassword', db='1309992639_bilar')
+    conn = pymysql.connect(host='tsuts.tskoli.is', port=3306, user='2704982729', passwd='mypassword', db='2704982729_bilar')
     cur = conn.cursor()
 
     cur.execute("SELECT count(*) FROM user where user=%s and pass=%s",(u,p))
@@ -57,7 +57,7 @@ def doinn():
 def breyta():
     nr = request.query.get('nr')
 
-    conn = pymysql.connect(host='tsuts.tskoli.is', port=3306, user='1309992639', passwd='mypassword', db='1309992639_bilar')
+    conn = pymysql.connect(host='tsuts.tskoli.is', port=3306, user='2704982729', passwd='mypassword', db='2704982729_bilar')
     cur = conn.cursor()
 
     
