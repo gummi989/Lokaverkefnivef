@@ -43,7 +43,7 @@ def doinn():
     cur = conn.cursor()
 
     cur.execute("SELECT count(*) FROM user where user=%s and pass=%s",(u,p))
-    result = cur.fetchone()#fáum tuple
+    result = cur.fetchone()
     cur.close()
     conn.close()
 
