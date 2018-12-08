@@ -3,8 +3,24 @@
   <head>
     <meta charset="utf-8">
     <title>Innskráning</title>
-  </head>
-  <body>
+	<style type="text/css">
+		body {
+			background-color: lightblue;
+			margin: 3em;
+		}
+		h3 {
+			color: darkblue;
+		}
+		form {
+			font-family: sans-serif;
+		}
+		input{
+			padding: .3em;
+			margin: .3em;
+		}
+	</style>
+</head>
+<body>
  	<h3>Nýskráningarform:</h3>
  	<form method="post" action="/donyskra" accept-charset="ISO-8859-1" id="ny">
  		Notendanafn:<br>
