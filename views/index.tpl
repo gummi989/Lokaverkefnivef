@@ -28,7 +28,7 @@
       <input type="text" name="numer" required>&nbsp;&nbsp;
       <input type='submit' value='Leita'>
       <br><br>
-      <a href='/innskra'>Admin</a>
+      <a href='/innskra'>Smelltu hér til þess að skrá þig inn</a>
   </form>    
   </body>
 </html>
