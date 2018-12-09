@@ -15,15 +15,12 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8 */;
 
---
--- Database: `dsg_prufa`
---
-
--- --------------------------------------------------------
-
---
--- Table structure for table `bilar`
---
+CREATE TABLE user (
+    `uid`      INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    `username` VARCHAR(64) NOT NULL UNIQUE,
+    `name`     VARCHAR(50),
+    `password` CHAR(88) NOT NULL
+);
 
 CREATE TABLE IF NOT EXISTS 2704982729_bilar (
   `skraningarnumer` varchar(6) NOT NULL,
